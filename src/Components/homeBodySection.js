@@ -1,18 +1,35 @@
-import {Container , Box} from '@mui/material/';
+import { Container, Box } from '@mui/material/';
 import HomeBodySection1 from './homeBodySection1';
 import HomeBodySection2 from './homeBodySection2';
+import { styled } from '@mui/material/';
+import { FitScreen } from '@mui/icons-material';
 
-function homeBodySection() {
+const StyledBox = styled(Box)({
+    marginLeft: 80,
+    marginRight: 80,
+    paddingTop: 47,
+
+    '@media (max-width: 700px)': {
+        marginLeft: 40,
+        marginRight: 40,
+    },
+    '@media (max-width: 400px)': {
+        marginLeft: 14,
+        marginRight: 14,
+    }
+})
+
+function homeBodySection(props) {
     return (
-        <div>
+        <div className='homeBodySection'>
             {/* <Container maxWidth="lg"> */}
-            <Box sx={{ ml: 10, mr: 10 , pt: 6 }}>
+            <StyledBox>
                 <HomeBodySection1 />
-                <HomeBodySection2 />
-            </Box>
+                <HomeBodySection2 setCountry={props.setCountry}/>
+            </StyledBox>
             {/* </Container> */}
         </div>
-    ); 
+    );
 }
 
 export default homeBodySection;

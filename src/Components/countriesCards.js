@@ -16,7 +16,11 @@ const CountriesCards = styled('div')({
     // backgroundColor: 'blueviolet',
     width: '75%',
     height: '100vh',
-    overflowY: 'scroll'
+    overflowY: 'scroll',
+
+    '@media (max-width: 1000px)': {
+        width: '100%',
+    }
 })
 
 let countries = [
@@ -65,20 +69,22 @@ let countries = [
 
 ]
 
-function countriesCards() {
+function countriesCards(props) {
+
+
     return (
 
         <CountriesCards>
             <Grid container spacing={9}>
                 {countries.map((country , index) => (
-                    <Grid item md={4} xs={12}>
+                    <Grid item lg={4} md={6} sm={6} xs={12}>
                         <CountryCard
                             flagSrc={country.flagSrc}
                             countryName={country.countryName}
                             population={country.population}
                             region={country.region}
                             capital={country.capital}
-                            key={index}
+                            setCountry={props.setCountry}
                         />
                     </Grid>
                 ))}

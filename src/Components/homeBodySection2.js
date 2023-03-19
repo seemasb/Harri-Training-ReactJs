@@ -8,14 +8,20 @@ const Section2 = styled('div')({
 
 })
 
+let StyledStack = styled('div')({
+    display: 'flex',
+    direction: 'row',
+    columnGap: '40px'
+})
 
-function homeBodySection2() {
+
+function homeBodySection2(props) {
     return (
         <Section2>
-            <Stack direction="row" spacing={3} justifyContent="space-between">
+            <StyledStack>
                 <FavoriteList />
-                <CountriesCards />
-            </Stack>
+                <CountriesCards setCountry={props.setCountry}/>
+            </StyledStack>
         </Section2>
     );
 }

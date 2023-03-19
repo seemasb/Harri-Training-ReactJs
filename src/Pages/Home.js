@@ -1,14 +1,14 @@
 import Header from '../Components/header'
 import HomeBodySection from '../Components/homeBodySection'
 import '../Styles/home.css'
-import bg from '../images/md-plus.png'
+import bg from '../images/mobilebg.jpg'
 
-function Home() {
+function Home(props) {
     return (
         <div>
             {/* <img class="demo-bg" src={bg}></img> */}
             <Header />
-            <HomeBodySection/>
+            <HomeBodySection setCountry={props.setCountry}/>
         </div>
     );
 }

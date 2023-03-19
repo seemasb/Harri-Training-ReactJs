@@ -1,4 +1,4 @@
-import { Container, InputAdornment, Search , TextField } from "@mui/material";
+import { Container, InputAdornment, Search, TextField } from "@mui/material";
 import { useState } from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import { styled } from '@mui/material/styles';
@@ -8,19 +8,25 @@ import { styled } from '@mui/material/styles';
 //  border: 'none',
 //  backgroundColor: 'white',
 //  width: '38%'
- 
+
 // })
 
 const SearchField = styled(TextField)`
   && {
     border: none;
     outline: none;
+    border-color: transparent;
     background-color: white;
     width: 38%;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    min-width: 300px;
 
     &:focus {
       outline: none;
+    }
+
+    @media screen and (max-width: 600px) {
+      width: 100%;
     }
   }
 `;
@@ -34,13 +40,17 @@ export default function SearchBar() {
   };
 
   return (
-      <SearchField
-        id="search"
-        type="search"
-        label={
-        <span><SearchIcon /> Search for a country..</span>}
-        value={searchTerm}
-        onChange={handleChange}
-      />
+    <SearchField
+      id="search"
+      type="search"
+      label={
+        <div>
+          <SearchIcon />
+          <span> Search for a country..</span>
+        </div>
+      }
+      value={searchTerm}
+      onChange={handleChange}
+    />
   );
 }

@@ -6,6 +6,9 @@ import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
 import { styled } from '@mui/material/styles';
 import US from '../images/us.svg'
+import { Outlet, Link } from "react-router-dom";
+import {useContext } from "react";
+import CountryContext from '../App'
 
 
 
@@ -29,33 +32,38 @@ const StyledFlag = styled('img')({
 })
 
 
-export default function countryCard(props) {
-  const { flagSrc, countryName, population, region, capital } = props;
+export default function CountryCard(props) {
+  const { flagSrc, countryName, population, region, capital , setCountry } = props;
+  // const setCountry = useContext(CountryContext);
 
   return (
-    <Card sx={{ maxWidth: 345 , pb: 2 , boxShadow: '0px 5px 5px rgba(0, 0, 0, 0.1)' }}>
-      <StyledFlag
-        src={flagSrc}
-      />
-      <CardContent sx={{ pt: 2.5, pl: 3  }}>
-        {/* <Typography gutterBottom variant="h6" component="div">
+    <Link to="/Info" style={{ textDecoration: 'none' }}>
+      <Card sx={{ pb: 2, boxShadow: '0px 5px 5px rgba(0, 0, 0, 0.1)' }}
+        onClick={() => setCountry(props)}
+      >
+        <StyledFlag
+          src={flagSrc}
+        />
+        <CardContent sx={{ pt: 2.5, pl: 3 }}>
+          {/* <Typography gutterBottom variant="h6" component="div">
           Unites States of America
         </Typography> */}
-        <Stack direction="column" spacing={1} justifyContent="space-between">
+          <Stack direction="column" spacing={1} justifyContent="space-between">
 
-          <CountryTitle>
-            {countryName}
-          </CountryTitle>
+            <CountryTitle>
+              {countryName}
+            </CountryTitle>
 
-          {/* <Typography variant="body2" gutterBottom> */}
+            {/* <Typography variant="body2" gutterBottom> */}
             <Stack direction="column" spacing={0.5} justifyContent="space-between">
               <div><SemiBold>Population: </SemiBold>{population}</div>
               <div><SemiBold>Region: </SemiBold>{region}</div>
               <div><SemiBold>Capital: </SemiBold>{capital}</div>
             </Stack>
-          {/* </Typography> */}
-        </Stack>
-      </CardContent>
-    </Card>
+            {/* </Typography> */}
+          </Stack>
+        </CardContent>
+      </Card>
+    </Link>
   );
 }
