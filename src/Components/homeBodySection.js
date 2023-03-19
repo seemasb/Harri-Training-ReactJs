@@ -1,16 +1,18 @@
-import Container from '@mui/material/Container';
+import {Container , Box} from '@mui/material/';
 import HomeBodySection1 from './homeBodySection1';
 import HomeBodySection2 from './homeBodySection2';
 
 function homeBodySection() {
     return (
-        <div className="homeBodySection">
-            <Container>
+        <div>
+            {/* <Container maxWidth="lg"> */}
+            <Box sx={{ ml: 10, mr: 10 , pt: 6 }}>
                 <HomeBodySection1 />
                 <HomeBodySection2 />
-            </Container>
+            </Box>
+            {/* </Container> */}
         </div>
-    );
+    ); 
 }
 
 export default homeBodySection;

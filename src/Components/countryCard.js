@@ -1,32 +1,61 @@
 import * as React from 'react';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import Stack from '@mui/material/Stack';
+import { styled } from '@mui/material/styles';
+import US from '../images/us.svg'
 
-export default function countryCard() {
+
+
+const CountryTitle = styled('div')({
+  fontWeight: '800',
+  fontSize: '19px',
+  // fontFamily: 'Nunito Sans',
+
+
+})
+
+const SemiBold = styled('span')({
+  // fontFamily: 'Nunito Sans',
+  fontWeight: '600',
+})
+
+const StyledFlag = styled('img')({
+  height: '160px',
+  objectFit: 'cover',
+  width: '100%'
+})
+
+
+export default function countryCard(props) {
+  const { flagSrc, countryName, population, region, capital } = props;
+
   return (
-    <Card sx={{ maxWidth: 345 }}>
-      <CardMedia
-        sx={{ height: 140 }}
-        image="/static/images/cards/contemplative-reptile.jpg"
-        title="green iguana"
+    <Card sx={{ maxWidth: 345 , pb: 2 , boxShadow: '0px 5px 5px rgba(0, 0, 0, 0.1)' }}>
+      <StyledFlag
+        src={flagSrc}
       />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          Lizard
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
-        </Typography>
+      <CardContent sx={{ pt: 2.5, pl: 3  }}>
+        {/* <Typography gutterBottom variant="h6" component="div">
+          Unites States of America
+        </Typography> */}
+        <Stack direction="column" spacing={1} justifyContent="space-between">
+
+          <CountryTitle>
+            {countryName}
+          </CountryTitle>
+
+          {/* <Typography variant="body2" gutterBottom> */}
+            <Stack direction="column" spacing={0.5} justifyContent="space-between">
+              <div><SemiBold>Population: </SemiBold>{population}</div>
+              <div><SemiBold>Region: </SemiBold>{region}</div>
+              <div><SemiBold>Capital: </SemiBold>{capital}</div>
+            </Stack>
+          {/* </Typography> */}
+        </Stack>
       </CardContent>
-      <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
-      </CardActions>
     </Card>
   );
 }

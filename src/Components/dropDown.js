@@ -13,19 +13,21 @@ export default function BasicSelect() {
   };
 
   return (
-    <Box sx={{ minWidth: 120 }}>
-      <FormControl fullWidth>
+    <Box sx={{ minWidth: 120 , width: '200px' , backgroundColor: 'white' , fontWeight: '800'}} >
+      <FormControl fullWidth >
         <InputLabel id="demo-simple-select-label">Filter By Region</InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           value={Filter}
-          label="Filter"
+          label="Filter By Region"
           onChange={handleChange}
         >
           <MenuItem value={'Africa'}>Africa</MenuItem>
           <MenuItem value={'America'}>America</MenuItem>
           <MenuItem value={'Asia'}>Asia</MenuItem>
+          <MenuItem value={'Europe'}>Europe</MenuItem>
+          <MenuItem value={'Oceania'}>Oceania</MenuItem>
         </Select>
       </FormControl>
     </Box>
