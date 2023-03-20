@@ -3,13 +3,7 @@ import Info from '../src/Pages/Info'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState, createContext, useContext } from "react";
 import './App.css'
-// import { createTheme, ThemeProvider } from '@material-ui/core/styles';
 
-// const theme = createTheme({
-//   typography: {
-//     fontFamily: ['Open Sans', 'sans-serif'].join(','),
-//   },
-// });
 
 export const CountryContext = createContext();
 
@@ -22,7 +16,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route>
-              <Route index element={<Home setCountry={setCountry}/>} />
+              <Route index element={<Home setCountry={setCountry} />} />
               <Route path="Info" element={<Info country={country} />} />
             </Route>
           </Routes>

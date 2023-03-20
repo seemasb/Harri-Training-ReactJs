@@ -9,11 +9,7 @@ import Albania from '../images/al.svg'
 import Algeria from '../images/dz.svg'
 
 
-
-
-
 const CountriesCards = styled('div')({
-    // backgroundColor: 'blueviolet',
     width: '75%',
     height: '100vh',
     overflowY: 'scroll',
@@ -76,7 +72,7 @@ function countriesCards(props) {
 
         <CountriesCards>
             <Grid container spacing={9}>
-                {countries.map((country , index) => (
+                {countries.map((country, index) => (
                     <Grid item lg={4} md={6} sm={6} xs={12}>
                         <CountryCard
                             flagSrc={country.flagSrc}

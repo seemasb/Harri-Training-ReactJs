@@ -1,6 +1,5 @@
 import SearchBar from '../Components/searchBar'
 import DropDown from '../Components/dropDown'
-import Stack from '@mui/material/Stack';
 import { styled } from '@mui/material/';
 
 let StyledStack = styled('div')({
@@ -13,10 +12,8 @@ let StyledStack = styled('div')({
 function homeBodySection1() {
     return (
         <StyledStack style={{ width: "100%" }}>
-            {/* <styledStack direction="row" spacing={4} justifyContent="space-between" wrap="wrap"> */}
-                <SearchBar />
-                <DropDown />
-            {/* </styledStack> */}
+            <SearchBar />
+            <DropDown />
         </StyledStack>
     );
 }

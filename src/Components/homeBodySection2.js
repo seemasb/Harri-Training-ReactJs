@@ -1,6 +1,5 @@
 import CountriesCards from '../Components/countriesCards'
 import FavoriteList from '../Components/favoriteList'
-import Stack from '@mui/material/Stack';
 import { styled } from '@mui/material/styles';
 
 const Section2 = styled('div')({
@@ -20,7 +19,7 @@ function homeBodySection2(props) {
         <Section2>
             <StyledStack>
                 <FavoriteList />
-                <CountriesCards setCountry={props.setCountry}/>
+                <CountriesCards setCountry={props.setCountry} />
             </StyledStack>
         </Section2>
     );

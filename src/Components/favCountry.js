@@ -1,5 +1,4 @@
 import { Button, Stack, styled } from '@mui/material/';
-import { fontWeight } from '@mui/system';
 import US from '../images/us.svg'
 import CloseIcon from '@mui/icons-material/Close';
 
@@ -24,7 +23,7 @@ const FavRemove = styled(Button)({
     '&:focus': {
         outline: 'none',
         backgroundColor: 'transparent',
-      }
+    }
 })
 
 function favCountry() {

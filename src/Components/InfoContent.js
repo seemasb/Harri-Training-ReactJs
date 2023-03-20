@@ -7,7 +7,6 @@ const StyledFlag = styled('img')({
     objectFit: 'cover',
     width: '93%',
     margin: 'auto',
-    // height: '400px'
     '@media (max-width: 899px)': {
         width: '100%',
     },
@@ -36,10 +35,9 @@ function InfoContent(props) {
                     <StyledFlag src={props.countryData.flagSrc}></StyledFlag>
                 </Grid>
                 <Grid item sm={6} md={6}>
-                    <InfoContentSection2/>
+                    <InfoContentSection2 />
                 </Grid>
             </Grid>
-            {/* {props.countryData.countryName} */}
         </StyledBox>
     );
 }

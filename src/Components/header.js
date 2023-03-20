@@ -27,14 +27,14 @@ const DarkModeBtn = styled(Button)`
 const StyledBox = styled(Box)({
   marginLeft: 80,
   marginRight: 80,
-  
+
   '@media (max-width: 700px)': {
     marginLeft: 40,
     marginRight: 40,
   },
   '@media (max-width: 400px)': {
-      marginLeft: 14,
-      marginRight: 14,
+    marginLeft: 14,
+    marginRight: 14,
   }
 })
 
@@ -42,17 +42,11 @@ const HeaderTitle = styled('div')({
   fontWeight: '800',
   fontSize: 25,
 
-  
+
   '@media (max-width: 400px)': {
     fontSize: 14
   }
 })
-
-// const DarkModeBtn = styled(Button)({
-//     color: 'white',
-//     backgroundColor: 'black',
-//     border: 'none',
-//   }); 
 
 
 function header() {

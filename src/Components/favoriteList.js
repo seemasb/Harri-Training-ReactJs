@@ -6,11 +6,9 @@ const FavList = styled('div')({
     backgroundColor: 'white',
     width: '24%',
     height: '100vh',
-    borderRadius: '4px', // Adds rounded corners
-    boxShadow: '0px 5px 10px rgba(0, 0, 0, 0.2)', // Adds a shadow
-    // paddingLeft: '25px'
-    
-    // Media query to hide component on screens with max width 900px
+    borderRadius: '4px',
+    boxShadow: '0px 5px 10px rgba(0, 0, 0, 0.2)',
+
     '@media (max-width: 1000px)': {
         display: 'none',
     },

@@ -1,15 +1,9 @@
-import { Container, InputAdornment, Search, TextField } from "@mui/material";
+import { TextField } from "@mui/material";
 import { useState } from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import { styled } from '@mui/material/styles';
 
 
-// const SearchField = styled(TextField)({
-//  border: 'none',
-//  backgroundColor: 'white',
-//  width: '38%'
-
-// })
 
 const SearchField = styled(TextField)`
   && {

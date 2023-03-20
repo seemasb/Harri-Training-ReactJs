@@ -10,9 +10,8 @@ function Info(props) {
         <div>
             {/* <img class="demo-bg" src={bg}></img> */}
             <Header />
-            <BackBtn/>
-            <InfoContent countryData={props.country}/>
-            {/* {props.country.countryName} */}
+            <BackBtn />
+            <InfoContent countryData={props.country} />
         </div>
     );
 }

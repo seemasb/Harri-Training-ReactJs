@@ -13,7 +13,7 @@ export default function BasicSelect() {
   };
 
   return (
-    <Box sx={{ minWidth: 120 , width: '200px' , backgroundColor: 'white' , fontWeight: '800'}} >
+    <Box sx={{ minWidth: 120, width: '200px', backgroundColor: 'white', fontWeight: '800' }} >
       <FormControl fullWidth >
         <InputLabel id="demo-simple-select-label">Filter By Region</InputLabel>
         <Select

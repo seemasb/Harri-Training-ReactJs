@@ -25,7 +25,7 @@ function homeBodySection(props) {
             {/* <Container maxWidth="lg"> */}
             <StyledBox>
                 <HomeBodySection1 />
-                <HomeBodySection2 setCountry={props.setCountry}/>
+                <HomeBodySection2 setCountry={props.setCountry} />
             </StyledBox>
             {/* </Container> */}
         </div>
