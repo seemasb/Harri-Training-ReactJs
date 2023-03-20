@@ -3,6 +3,7 @@ import Info from '../src/Pages/Info'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState, createContext, useContext } from "react";
 import './App.css'
+// add
 
 
 export const CountryContext = createContext();
@@ -22,6 +23,8 @@ function App() {
           </Routes>
         </BrowserRouter>
       </CountryContext.Provider>
+
+      {/* <Home setCountry={setCountry} /> */}
     </div>
   );
 }
