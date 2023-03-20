@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/Harri-Training-ReactJs/static/css/main.785481be.css",
-    "main.js": "/Harri-Training-ReactJs/static/js/main.18e380d2.js",
-    "static/js/787.ebef4dba.chunk.js": "/Harri-Training-ReactJs/static/js/787.ebef4dba.chunk.js",
-    "static/media/mobilebg.jpg": "/Harri-Training-ReactJs/static/media/mobilebg.83bb5c9abc46ecb5eb37.jpg",
-    "static/media/mobileInfo.jpg": "/Harri-Training-ReactJs/static/media/mobileInfo.9f371ddbc79cb3941ee4.jpg",
-    "static/media/al.svg": "/Harri-Training-ReactJs/static/media/al.dd17f9b0b19aa16e7afe8e156454f33d.svg",
-    "static/media/br.svg": "/Harri-Training-ReactJs/static/media/br.0195f1434b135a18881f1fd31a962073.svg",
-    "static/media/us.svg": "/Harri-Training-ReactJs/static/media/us.14abad61351d512234363fd6c0af113a.svg",
-    "index.html": "/Harri-Training-ReactJs/index.html",
-    "static/media/ax.svg": "/Harri-Training-ReactJs/static/media/ax.dae59e50e62504789ce58388d65e1b30.svg",
-    "static/media/dz.svg": "/Harri-Training-ReactJs/static/media/dz.8fee433ae9c49de475a8c04a17ca0579.svg",
-    "static/media/is.svg": "/Harri-Training-ReactJs/static/media/is.bb94eebadbe98e459758ddcf03f1dfb9.svg",
-    "main.785481be.css.map": "/Harri-Training-ReactJs/static/css/main.785481be.css.map",
-    "main.18e380d2.js.map": "/Harri-Training-ReactJs/static/js/main.18e380d2.js.map",
-    "787.ebef4dba.chunk.js.map": "/Harri-Training-ReactJs/static/js/787.ebef4dba.chunk.js.map"
+    "main.css": "/seemasb/Harri-Training-ReactJs/static/css/main.785481be.css",
+    "main.js": "/seemasb/Harri-Training-ReactJs/static/js/main.cfa56dab.js",
+    "static/js/787.ebef4dba.chunk.js": "/seemasb/Harri-Training-ReactJs/static/js/787.ebef4dba.chunk.js",
+    "static/media/mobilebg.jpg": "/seemasb/Harri-Training-ReactJs/static/media/mobilebg.83bb5c9abc46ecb5eb37.jpg",
+    "static/media/mobileInfo.jpg": "/seemasb/Harri-Training-ReactJs/static/media/mobileInfo.9f371ddbc79cb3941ee4.jpg",
+    "static/media/al.svg": "/seemasb/Harri-Training-ReactJs/static/media/al.dd17f9b0b19aa16e7afe8e156454f33d.svg",
+    "static/media/br.svg": "/seemasb/Harri-Training-ReactJs/static/media/br.0195f1434b135a18881f1fd31a962073.svg",
+    "index.html": "/seemasb/Harri-Training-ReactJs/index.html",
+    "static/media/us.svg": "/seemasb/Harri-Training-ReactJs/static/media/us.14abad61351d512234363fd6c0af113a.svg",
+    "static/media/ax.svg": "/seemasb/Harri-Training-ReactJs/static/media/ax.dae59e50e62504789ce58388d65e1b30.svg",
+    "static/media/dz.svg": "/seemasb/Harri-Training-ReactJs/static/media/dz.8fee433ae9c49de475a8c04a17ca0579.svg",
+    "static/media/is.svg": "/seemasb/Harri-Training-ReactJs/static/media/is.bb94eebadbe98e459758ddcf03f1dfb9.svg",
+    "main.785481be.css.map": "/seemasb/Harri-Training-ReactJs/static/css/main.785481be.css.map",
+    "main.cfa56dab.js.map": "/seemasb/Harri-Training-ReactJs/static/js/main.cfa56dab.js.map",
+    "787.ebef4dba.chunk.js.map": "/seemasb/Harri-Training-ReactJs/static/js/787.ebef4dba.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.785481be.css",
-    "static/js/main.18e380d2.js"
+    "static/js/main.cfa56dab.js"
   ]
 }
