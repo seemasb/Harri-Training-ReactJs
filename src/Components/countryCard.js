@@ -24,6 +24,20 @@ const StyledFlag = styled('img')({
   width: '100%'
 })
 
+const StyledCard = styled(Card)({
+
+  '@media (max-width: 1000px)': {
+    maxWidth: '300px',
+    // margin: 'auto'
+  },
+
+  '@media (max-width: 600px)': {
+    // maxWidth: '70%',
+    margin: 'auto'
+  }
+
+})
+
 
 export default function CountryCard(props) {
   const { flagSrc, countryName, population, region, capital, setCountry } = props;
@@ -31,7 +45,7 @@ export default function CountryCard(props) {
 
   return (
     <Link to="/Info" style={{ textDecoration: 'none' }}>
-      <Card sx={{ pb: 2, boxShadow: '0px 5px 5px rgba(0, 0, 0, 0.1)' }}
+      <StyledCard sx={{ pb: 2, boxShadow: '0px 5px 5px rgba(0, 0, 0, 0.1)' }}
         onClick={() => setCountry(props)}
       >
         <StyledFlag
@@ -51,7 +65,7 @@ export default function CountryCard(props) {
             </Stack>
           </Stack>
         </CardContent>
-      </Card>
+      </StyledCard>
     </Link>
   );
 }

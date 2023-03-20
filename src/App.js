@@ -14,14 +14,14 @@ function App() {
   return (
     <div className="App">
       <CountryContext.Provider value={country}>
-        <BrowserRouter>
+        {/* <BrowserRouter> */}
           <Routes>
             <Route>
               <Route index element={<Home setCountry={setCountry} />} />
               <Route path="Info" element={<Info country={country} />} />
             </Route>
           </Routes>
-        </BrowserRouter>
+        {/* </BrowserRouter> */}
       </CountryContext.Provider>
 
       {/* <Home setCountry={setCountry} /> */}

@@ -1,9 +1,31 @@
 import styled from 'styled-components';
+import BorderCountry from './BorderCountry';
 
 const FlexDiv = styled('div')({
     display: 'flex',
     flexDirection: 'column',
     rowGap: '0.7rem',
+
+})
+
+const BorderFlex = styled('div')({
+    display: 'flex',
+    flexDirection: 'row',
+    columnGap: '0.7rem',
+    flexWrap: 'wrap',
+    rowGap: '0.7rem',
+    marginTop: 40,
+
+    '@media (max-width: 1150px)': {
+        marginTop: 20,
+        fontSize: '13px'
+    },
+})
+
+const BorderCountries = styled('div')({
+    display: 'flex',
+    flexDirection: 'row',
+    columnGap: '0.7rem',
 
 })
 
@@ -52,6 +74,11 @@ const Bold = styled('span')({
     fontWeight: '800'
 })
 
+const BoldBorderTitle = styled('span')({
+    fontWeight: '800',
+    marginTop:5
+})
+
 export default function InfoContentSection2() {
     return (
         <DivInfoContentSection2>
@@ -71,14 +98,14 @@ export default function InfoContentSection2() {
                 </FlexDiv>
             </Flex1>
 
-            {/* <div>
-                <span>Border Countries:</span>
-                <div>
-                    <span>French</span>
-                    <span>Germany</span>
-                    <span>Netherlands</span>
-                </div>
-            </div> */}
+            <BorderFlex>
+                <BoldBorderTitle>Border Countries:</BoldBorderTitle>
+                <BorderCountries>
+                    <BorderCountry country='French'/>
+                    <BorderCountry country='Germany'/>
+                    <BorderCountry country='Netherlands'/>
+                </BorderCountries>
+            </BorderFlex>
         </DivInfoContentSection2>
     )
 }

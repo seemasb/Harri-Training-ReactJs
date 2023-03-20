@@ -14,7 +14,7 @@ const DarkModeBtn = styled(Button)`
     // width: fit-content;
 
     //////caution////////
-    margin-right: -17px;
+    margin-right: -15px;
 
     &:hover {
       background-color: transparent;
@@ -43,8 +43,8 @@ const HeaderTitle = styled('div')({
   fontSize: 25,
 
 
-  '@media (max-width: 400px)': {
-    fontSize: 14
+  '@media (max-width: 600px)': {
+    fontSize: 17
   }
 })
 
@@ -54,7 +54,7 @@ function header() {
     <div className='header'>
       <StyledBox>
         <Stack direction="row" spacing={0} justifyContent="space-between">
-          <h2>Where in the world?</h2>
+          <HeaderTitle>Where in the world?</HeaderTitle>
 
           <DarkModeBtn variant="outlined" startIcon={<DarkModeOutlinedIcon />}>
             Dark Mode
