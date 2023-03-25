@@ -1,10 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
-import './App.css'
 import Home from '../src/Pages/Home'
 import Info from '../src/Pages/Info'
+import { Countryloader } from '../src/Pages/Info';
 import reportWebVitals from './reportWebVitals';
 import {
   createBrowserRouter,
@@ -17,8 +16,9 @@ const router = createBrowserRouter([
     element: <Home />,
   },
   {
-    path: "Info",
+    path: "Info/:country",
     element: <Info />,
+    loader: Countryloader,
   }
 ],
   {
@@ -27,9 +27,6 @@ const router = createBrowserRouter([
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  // <React.StrictMode>
-  // <App />
-  // </React.StrictMode>
   <React.StrictMode>
     <RouterProvider router={router} />
   </React.StrictMode>

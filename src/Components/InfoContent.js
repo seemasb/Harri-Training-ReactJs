@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { Box } from '@mui/material/';
 import Grid from '@mui/material/Grid';
 import InfoContentSection2 from './InfoContectSection2'
+import BrazilSrc from '../images/br.svg'
 
 const StyledFlag = styled('img')({
     objectFit: 'cover',
@@ -27,15 +28,15 @@ const StyledBox = styled(Box)({
     }
 })
 
-function InfoContent(props) {
+function InfoContent({CountryName}) {
     return (
         <StyledBox>
             <Grid container spacing={5}>
                 <Grid item sm={12} md={6}>
-                    <StyledFlag src={props.countryData.flagSrc}></StyledFlag>
+                    <StyledFlag src={BrazilSrc}></StyledFlag>
                 </Grid>
                 <Grid item sm={6} md={6}>
-                    <InfoContentSection2 />
+                    <InfoContentSection2 CountryName={CountryName}/>
                 </Grid>
             </Grid>
         </StyledBox>

@@ -79,10 +79,10 @@ const BoldBorderTitle = styled('span')({
     marginTop:5
 })
 
-export default function InfoContentSection2() {
+export default function InfoContentSection2({CountryName}) {
     return (
         <DivInfoContentSection2>
-            <CountryTitle>Belguim</CountryTitle>
+            <CountryTitle>{CountryName}</CountryTitle>
             <Flex1>
                 <FlexDiv>
                     <span><Bold>Native Name: </Bold>Belgie</span>

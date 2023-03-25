@@ -4,8 +4,6 @@ import CardContent from '@mui/material/CardContent';
 import Stack from '@mui/material/Stack';
 import { styled } from '@mui/material/styles';
 import { Link } from "react-router-dom";
-import { useContext } from "react";
-import CountryContext from '../App'
 
 
 
@@ -41,10 +39,9 @@ const StyledCard = styled(Card)({
 
 export default function CountryCard(props) {
   const { flagSrc, countryName, population, region, capital } = props;
-  // const setCountry = useContext(CountryContext);
 
   return (
-    <Link to={`Info`} style={{ textDecoration: 'none' }}>
+    <Link to={`Info/${countryName}`} style={{ textDecoration: 'none' }}>
       <StyledCard sx={{ pb: 2, boxShadow: '0px 5px 5px rgba(0, 0, 0, 0.1)' }}
         onClick={() =>{}}
       >
