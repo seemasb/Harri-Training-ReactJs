@@ -40,13 +40,13 @@ const StyledCard = styled(Card)({
 
 
 export default function CountryCard(props) {
-  const { flagSrc, countryName, population, region, capital, setCountry } = props;
+  const { flagSrc, countryName, population, region, capital } = props;
   // const setCountry = useContext(CountryContext);
 
   return (
-    <Link to="/Info" style={{ textDecoration: 'none' }}>
+    <Link to={`Info`} style={{ textDecoration: 'none' }}>
       <StyledCard sx={{ pb: 2, boxShadow: '0px 5px 5px rgba(0, 0, 0, 0.1)' }}
-        onClick={() => setCountry(props)}
+        onClick={() =>{}}
       >
         <StyledFlag
           src={flagSrc}

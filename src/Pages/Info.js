@@ -5,13 +5,13 @@ import bg from '../images/mobileInfo.jpg'
 import BackBtn from "../Components/BackBtn";
 
 
-function Info(props) {
+function Info() {
     return (
         <div>
             {/* <img class="demo-bg" src={bg}></img> */}
             <Header />
             <BackBtn />
-            <InfoContent countryData={props.country} />
+            <InfoContent countryData="Brazil" />
         </div>
     );
 }

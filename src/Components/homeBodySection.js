@@ -19,13 +19,13 @@ const StyledBox = styled(Box)({
     }
 })
 
-function homeBodySection(props) {
+function homeBodySection() {
     return (
         <div className='homeBodySection'>
             {/* <Container maxWidth="lg"> */}
             <StyledBox>
                 <HomeBodySection1 />
-                <HomeBodySection2 setCountry={props.setCountry} />
+                <HomeBodySection2 />
             </StyledBox>
             {/* </Container> */}
         </div>

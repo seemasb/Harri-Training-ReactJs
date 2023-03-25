@@ -65,7 +65,7 @@ let countries = [
 
 ]
 
-function countriesCards(props) {
+function countriesCards() {
 
 
     return (
@@ -80,7 +80,6 @@ function countriesCards(props) {
                             population={country.population}
                             region={country.region}
                             capital={country.capital}
-                            setCountry={props.setCountry}
                         />
                     </Grid>
                 ))}

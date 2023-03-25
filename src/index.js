@@ -2,6 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import './App.css'
+import Home from '../src/Pages/Home'
+import Info from '../src/Pages/Info'
 import reportWebVitals from './reportWebVitals';
 import {
   createBrowserRouter,
@@ -10,10 +13,17 @@ import {
 
 const router = createBrowserRouter([
   {
-    path: "*",
-    element: <App />,
+    path: "/",
+    element: <Home />,
   },
-]);
+  {
+    path: "Info",
+    element: <Info />,
+  }
+],
+  {
+    basename: "/Harri-Training-ReactJs",
+  });
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
