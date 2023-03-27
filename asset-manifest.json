@@ -1,10 +1,8 @@
 {
   "files": {
     "main.css": "/Harri-Training-ReactJs/static/css/main.abe276b9.css",
-    "main.js": "/Harri-Training-ReactJs/static/js/main.fbe62dc1.js",
+    "main.js": "/Harri-Training-ReactJs/static/js/main.b765f347.js",
     "static/js/787.ebef4dba.chunk.js": "/Harri-Training-ReactJs/static/js/787.ebef4dba.chunk.js",
-    "static/media/mobilebg.jpg": "/Harri-Training-ReactJs/static/media/mobilebg.83bb5c9abc46ecb5eb37.jpg",
-    "static/media/mobileInfo.jpg": "/Harri-Training-ReactJs/static/media/mobileInfo.9f371ddbc79cb3941ee4.jpg",
     "static/media/al.svg": "/Harri-Training-ReactJs/static/media/al.dd17f9b0b19aa16e7afe8e156454f33d.svg",
     "static/media/br.svg": "/Harri-Training-ReactJs/static/media/br.0195f1434b135a18881f1fd31a962073.svg",
     "static/media/us.svg": "/Harri-Training-ReactJs/static/media/us.14abad61351d512234363fd6c0af113a.svg",
@@ -13,11 +11,11 @@
     "static/media/dz.svg": "/Harri-Training-ReactJs/static/media/dz.8fee433ae9c49de475a8c04a17ca0579.svg",
     "static/media/is.svg": "/Harri-Training-ReactJs/static/media/is.bb94eebadbe98e459758ddcf03f1dfb9.svg",
     "main.abe276b9.css.map": "/Harri-Training-ReactJs/static/css/main.abe276b9.css.map",
-    "main.fbe62dc1.js.map": "/Harri-Training-ReactJs/static/js/main.fbe62dc1.js.map",
+    "main.b765f347.js.map": "/Harri-Training-ReactJs/static/js/main.b765f347.js.map",
     "787.ebef4dba.chunk.js.map": "/Harri-Training-ReactJs/static/js/787.ebef4dba.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.abe276b9.css",
-    "static/js/main.fbe62dc1.js"
+    "static/js/main.b765f347.js"
   ]
 }
