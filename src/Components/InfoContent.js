@@ -23,19 +23,19 @@ const StyledBox = styled(Box)({
         marginRight: 40,
     },
     '@media (max-width: 400px)': {
-        marginLeft: 14,
-        marginRight: 14,
+        marginLeft: 27,
+        marginRight: 27,
     }
 })
 
 function InfoContent({CountryName}) {
     return (
         <StyledBox>
-            <Grid container spacing={5}>
+            <Grid container spacing={9}>
                 <Grid item sm={12} md={6}>
                     <StyledFlag src={BrazilSrc}></StyledFlag>
                 </Grid>
-                <Grid item sm={6} md={6}>
+                <Grid item sm={12} md={6}>
                     <InfoContentSection2 CountryName={CountryName}/>
                 </Grid>
             </Grid>

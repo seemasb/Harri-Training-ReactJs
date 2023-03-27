@@ -6,6 +6,10 @@ const FlexDiv = styled('div')({
     flexDirection: 'column',
     rowGap: '0.7rem',
 
+    '@media (max-width: 400px)': {
+        rowGap: '0.9rem',
+    },
+
 })
 
 const BorderFlex = styled('div')({
@@ -14,7 +18,7 @@ const BorderFlex = styled('div')({
     columnGap: '0.7rem',
     flexWrap: 'wrap',
     rowGap: '0.7rem',
-    marginTop: 40,
+    marginTop: 65,
 
     '@media (max-width: 1150px)': {
         marginTop: 20,
@@ -42,7 +46,8 @@ const Flex1 = styled('div')({
     },
 
     '@media (max-width: 700px)': {
-        fontSize: '13px'
+        fontSize: '13px',
+        rowGap: '40px',
     },
 
 
@@ -76,10 +81,14 @@ const Bold = styled('span')({
 
 const BoldBorderTitle = styled('span')({
     fontWeight: '800',
-    marginTop:5
+    marginTop: 5,
+    '@media (max-width: 400px)': {
+        fontSize: '15px',
+        marginTop: 23,
+    },
 })
 
-export default function InfoContentSection2({CountryName}) {
+export default function InfoContentSection2({ CountryName }) {
     return (
         <DivInfoContentSection2>
             <CountryTitle>{CountryName}</CountryTitle>
@@ -101,9 +110,9 @@ export default function InfoContentSection2({CountryName}) {
             <BorderFlex>
                 <BoldBorderTitle>Border Countries:</BoldBorderTitle>
                 <BorderCountries>
-                    <BorderCountry country='French'/>
-                    <BorderCountry country='Germany'/>
-                    <BorderCountry country='Netherlands'/>
+                    <BorderCountry country='French' />
+                    <BorderCountry country='Germany' />
+                    <BorderCountry country='Netherlands' />
                 </BorderCountries>
             </BorderFlex>
         </DivInfoContentSection2>

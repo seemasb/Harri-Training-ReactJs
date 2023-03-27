@@ -1,6 +1,8 @@
 import { Button, Stack, styled } from '@mui/material/';
 import US from '../images/us.svg'
 import CloseIcon from '@mui/icons-material/Close';
+import IconButton from '@mui/material/IconButton';
+
 
 const FavFlag = styled('img')({
     width: '34px',
@@ -34,6 +36,9 @@ function favCountry() {
                     <FavFlag src={US}></FavFlag>
                     <FavTitle>Jordan</FavTitle>
                 </Stack>
+                {/* <IconButton aria-label="delete" size="small">
+                    <CloseIcon fontSize="inherit" />
+                </IconButton> */}
                 <FavRemove><CloseIcon
                     sx={{ fontSize: 11, backgroundColor: 'lightgray', borderRadius: 5, p: 0.3 }}
                 /></FavRemove>

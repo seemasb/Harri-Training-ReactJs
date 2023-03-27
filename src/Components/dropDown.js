@@ -4,6 +4,13 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import styled from 'styled-components';
+
+const StyledInputLabel = styled(InputLabel)({
+  '@media (max-width: 400px)': {
+    fontSize: '10px',
+  }
+})
 
 export default function BasicSelect() {
   const [Filter, setFilter] = React.useState('');
@@ -14,11 +21,9 @@ export default function BasicSelect() {
 
   return (
     <Box sx={{ minWidth: 120, width: '200px', backgroundColor: 'white', fontWeight: '800' }} >
-      <FormControl fullWidth >
-        <InputLabel id="demo-simple-select-label">Filter By Region</InputLabel>
+      <FormControl fullWidth>
+        <StyledInputLabel>Filter By Region</StyledInputLabel>
         <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
           value={Filter}
           label="Filter By Region"
           onChange={handleChange}

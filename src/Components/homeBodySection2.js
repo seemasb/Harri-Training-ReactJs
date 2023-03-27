@@ -5,6 +5,10 @@ import { styled } from '@mui/material/styles';
 const Section2 = styled('div')({
     marginTop: '49px',
 
+    '@media (max-width: 400px)': {
+        marginTop: '35px',
+      }
+
 })
 
 let StyledStack = styled('div')({
@@ -14,12 +18,12 @@ let StyledStack = styled('div')({
 })
 
 
-function homeBodySection2(props) {
+function homeBodySection2() {
     return (
         <Section2>
             <StyledStack>
                 <FavoriteList />
-                <CountriesCards setCountry={props.setCountry} />
+                <CountriesCards />
             </StyledStack>
         </Section2>
     );

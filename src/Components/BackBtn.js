@@ -53,7 +53,7 @@ const StyledBox = styled(Box)({
     ,
     '@media (max-width: 450px)': {
         marginTop: 40,
-        marginBottom: 40,
+        marginBottom: 65,
     }
 })
 

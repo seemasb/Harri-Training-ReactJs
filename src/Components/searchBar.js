@@ -25,6 +25,13 @@ const SearchField = styled(TextField)`
   }
 `;
 
+const Flex = styled('div')({
+  display: 'flex',
+  fontSize: '14px',
+  columnGap: 7,
+})
+
+
 
 export default function SearchBar() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -38,10 +45,12 @@ export default function SearchBar() {
       id="search"
       type="search"
       label={
-        <div>
+        <Flex>
           <SearchIcon />
-          <span> Search for a country..</span>
-        </div>
+          <div>
+            Search for a country..
+          </div>
+        </Flex>
       }
       value={searchTerm}
       onChange={handleChange}

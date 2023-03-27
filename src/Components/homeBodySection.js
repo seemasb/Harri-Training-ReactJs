@@ -16,6 +16,7 @@ const StyledBox = styled(Box)({
     '@media (max-width: 400px)': {
         marginLeft: 14,
         marginRight: 14,
+        paddingTop: 25,
     }
 })
 
