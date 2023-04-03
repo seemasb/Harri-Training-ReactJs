@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import App from './App';
 import Home from '../src/Pages/Home'
 import Info from '../src/Pages/Info'
 import { Countryloader } from '../src/Pages/Info';
@@ -10,25 +11,26 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Home />,
-  },
-  {
-    path: "Info/:country",
-    element: <Info />,
-    loader: Countryloader,
-  }
-],
-  {
-    basename: "/Harri-Training-ReactJs",
-  });
+// const router = createBrowserRouter([
+//   {
+//     path: "/",
+//     element: <Home />,
+//   },
+//   {
+//     path: "Info/:country",
+//     element: <Info />,
+//     loader: Countryloader,
+//   }
+// ],
+//   {
+//     basename: "/Harri-Training-ReactJs",
+//   });
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    {/* <RouterProvider router={router} /> */}
+    <App />
   </React.StrictMode>
 );
 

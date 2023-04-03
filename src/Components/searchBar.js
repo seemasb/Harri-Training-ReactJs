@@ -1,5 +1,4 @@
 import { TextField } from "@mui/material";
-import { useState } from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import { styled } from '@mui/material/styles';
 
@@ -33,12 +32,9 @@ const Flex = styled('div')({
 
 
 
-export default function SearchBar() {
-  const [searchTerm, setSearchTerm] = useState("");
+export default function SearchBar(props) {
 
-  const handleChange = (event) => {
-    setSearchTerm(event.target.value);
-  };
+  const { onSearch, searchTerm } = props
 
   return (
     <SearchField
@@ -53,7 +49,7 @@ export default function SearchBar() {
         </Flex>
       }
       value={searchTerm}
-      onChange={handleChange}
+      onChange={onSearch}
     />
   );
 }

@@ -9,11 +9,12 @@ let StyledStack = styled('div')({
     flexWrap: 'wrap',
     rowGap: '20px'
 })
-function homeBodySection1() {
+function homeBodySection1(props) {
+    const { onSearch, searchTerm } = props
     return (
         <StyledStack style={{ width: "100%" }}>
-            <SearchBar />
-            <DropDown />
+            <SearchBar onSearch={onSearch} searchTerm={searchTerm} />
+            <DropDown onFilterChange={props.onFilterChange} filter={props.filter} />
         </StyledStack>
     );
 }

@@ -88,20 +88,23 @@ const BoldBorderTitle = styled('span')({
     },
 })
 
-export default function InfoContentSection2({ CountryName }) {
+export default function InfoContentSection2({ countryInfo }) {
+
+    const { name, population, region, subregion, capital,
+        cca2, currencies, languages } = countryInfo
     return (
         <DivInfoContentSection2>
-            <CountryTitle>{CountryName}</CountryTitle>
+            <CountryTitle>{name.common}</CountryTitle>
             <Flex1>
                 <FlexDiv>
-                    <span><Bold>Native Name: </Bold>Belgie</span>
-                    <span><Bold>Population: </Bold>11,319,511</span>
-                    <span><Bold>Region: </Bold>Europe</span>
-                    <span><Bold>Sub Region: </Bold>Western Europe</span>
-                    <span><Bold>Capital: </Bold>Brussels</span>
+                    <span><Bold>Native Name: </Bold>{name.common}</span>
+                    <span><Bold>Population: </Bold>{population}</span>
+                    <span><Bold>Region: </Bold>{region}</span>
+                    <span><Bold>Sub Region: </Bold>{subregion}</span>
+                    <span><Bold>Capital: </Bold>{capital}</span>
                 </FlexDiv>
                 <FlexDiv>
-                    <span><Bold>Top Level Domain: </Bold>be</span>
+                    <span><Bold>Top Level Domain: </Bold>{cca2}</span>
                     <span><Bold>Currencies: </Bold>Euro</span>
                     <span><Bold>Languages: </Bold>Dutch,French,German</span>
                 </FlexDiv>

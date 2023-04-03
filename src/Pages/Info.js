@@ -1,4 +1,4 @@
-import Header from "../Components/header";
+import Header from "../Components/Header";
 import InfoContent from '../Components/InfoContent'
 import '../Styles/home.css'
 import BackBtn from "../Components/BackBtn";

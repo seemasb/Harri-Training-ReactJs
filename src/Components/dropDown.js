@@ -12,24 +12,25 @@ const StyledInputLabel = styled(InputLabel)({
   }
 })
 
-export default function BasicSelect() {
-  const [Filter, setFilter] = React.useState('');
+export default function BasicSelect({onFilterChange , filter}) {
+  // const [Filter, setFilter] = React.useState('');
 
-  const handleChange = (event) => {
-    setFilter(event.target.value);
-  };
+  // const handleChange = (event) => {
+  //   setFilter(event.target.value);
+  // };
 
   return (
     <Box sx={{ minWidth: 120, width: '200px', backgroundColor: 'white', fontWeight: '800' }} >
       <FormControl fullWidth>
         <StyledInputLabel>Filter By Region</StyledInputLabel>
         <Select
-          value={Filter}
+          value={filter}
           label="Filter By Region"
-          onChange={handleChange}
+          onChange={onFilterChange}
         >
+          <MenuItem value={''}>No Filter</MenuItem>
           <MenuItem value={'Africa'}>Africa</MenuItem>
-          <MenuItem value={'America'}>America</MenuItem>
+          <MenuItem value={'Americas'}>Americas</MenuItem>
           <MenuItem value={'Asia'}>Asia</MenuItem>
           <MenuItem value={'Europe'}>Europe</MenuItem>
           <MenuItem value={'Oceania'}>Oceania</MenuItem>

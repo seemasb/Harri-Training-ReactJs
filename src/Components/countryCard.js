@@ -4,7 +4,9 @@ import CardContent from '@mui/material/CardContent';
 import Stack from '@mui/material/Stack';
 import { styled } from '@mui/material/styles';
 import { Link } from "react-router-dom";
-
+import { useDrag } from 'react-dnd';
+import { useContext } from "react";
+import { ThemeContext } from "../Themes/ThemeContext";
 
 
 const CountryTitle = styled('div')({
@@ -28,6 +30,9 @@ const StyledFlag = styled('img')({
 
 const StyledCard = styled(Card)({
 
+  backgroundColor: (props) => props.cardTheme.Lightbackground,
+  color: (props) => props.cardTheme.color,
+
   '@media (max-width: 1000px)': {
     maxWidth: '300px',
     // margin: 'auto'
@@ -45,22 +50,36 @@ const StyledCard = styled(Card)({
 })
 
 
-export default function CountryCard(props) {
-  const { flagSrc, countryName, population, region, capital } = props;
+export default function CountryCard({ Country }) {
+
+  const { flags, name, population, region, capital } = Country;
+  const theme = useContext(ThemeContext);
+
+  const [{ isDragging }, drag] = useDrag(() => ({
+    type: 'CARD',
+    item: { Country },
+    collect: monitor => ({
+      isDragging: !!monitor.isDragging(),
+    }),
+  }))
 
   return (
-    <Link to={`Info/${countryName}`} style={{ textDecoration: 'none' }}>
+    <Link to={`Info/${name.common}`} style={{ textDecoration: 'none', opacity: isDragging ? 0.5 : 1 }}
+      ref={drag}
+    >
       <StyledCard sx={{ pb: 2, boxShadow: '0px 5px 5px rgba(0, 0, 0, 0.1)' }}
-        onClick={() => { }}
+        onClick={() => { console.log(Country) }}
       >
+
+        {/* cardTheme={theme} */}
         <StyledFlag
-          src={flagSrc}
+          src={flags.svg}
         />
         <CardContent sx={{ pt: 2.5, pl: 3 }}>
           <Stack direction="column" spacing={1.5} justifyContent="space-between">
 
             <CountryTitle>
-              {countryName}
+              {name.common}
             </CountryTitle>
 
             <Stack direction="column" spacing={0.3} justifyContent="space-between">

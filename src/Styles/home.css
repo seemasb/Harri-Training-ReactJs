@@ -10,21 +10,3 @@
 
   
 }
-
-
-.header {
-    height: 80px;
-    line-height: 80px;
-    background-color: white;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    position: relative;
-    /* font-size: 15px; */
-    
-}
-
-
-.homeBodySection{
-    background-color: #fafafa;
-    padding-bottom: 70px;
-    /* height: 100vh; */
-}

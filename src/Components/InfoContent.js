@@ -2,7 +2,9 @@ import styled from 'styled-components';
 import { Box } from '@mui/material/';
 import Grid from '@mui/material/Grid';
 import InfoContentSection2 from './InfoContectSection2'
-import BrazilSrc from '../images/br.svg'
+import CircularProgress from '@mui/material/CircularProgress';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const StyledFlag = styled('img')({
     objectFit: 'cover',
@@ -28,17 +30,36 @@ const StyledBox = styled(Box)({
     }
 })
 
-function InfoContent({CountryName}) {
+function InfoContent({ CountryName }) {
+    const [countryInfo, setCountryInfo] = useState();
+
+    useEffect(() => {
+
+        const fetchData = async () => {
+            try {
+                const fetcehdInfo = await axios.get('https://restcountries.com/v3.1/name/' + CountryName)
+                console.log(fetcehdInfo.data[0]);
+                setCountryInfo(fetcehdInfo.data[0]);
+            } catch (error) {
+                console.error(error.message);
+            }
+        }
+
+        fetchData();
+    }, [])
+
     return (
         <StyledBox>
+            {countryInfo ? 
             <Grid container spacing={9}>
                 <Grid item sm={12} md={6}>
-                    <StyledFlag src={BrazilSrc}></StyledFlag>
+                    <StyledFlag src={countryInfo.flags.svg}></StyledFlag>
                 </Grid>
                 <Grid item sm={12} md={6}>
-                    <InfoContentSection2 CountryName={CountryName}/>
+                    <InfoContentSection2 countryInfo={countryInfo} />
                 </Grid>
             </Grid>
+            : <CircularProgress /> }
         </StyledBox>
     );
 }

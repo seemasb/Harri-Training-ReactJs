@@ -3,11 +3,15 @@ import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import styled from 'styled-components';
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
+import { useContext } from "react";
+import { ThemeContext } from "../Themes/ThemeContext";
 
+// const Theme = useContext(ThemeContext);
+// ${({ Theme }) => Theme.background}
 
 const DarkModeBtn = styled(Button)`
   && {
-    color: black;
+    color: ${(props) => props.btntheme.color};
     border: none;
     text-transform: none;
     font-weight: 600;
@@ -17,7 +21,7 @@ const DarkModeBtn = styled(Button)`
     margin-right: -15px;
 
     &:hover {
-      background-color: transparent;
+      background-color:transparent;
       color: black;
       border: none;
     }
@@ -38,6 +42,16 @@ const StyledBox = styled(Box)({
   }
 })
 
+const HeaderDiv = styled.div`
+    height: 80px;
+    line-height: 80px;
+    background-color: ${(props) => props.theme.Lightbackground};
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    color: ${(props) => props.theme.color};
+`
+
+
 const HeaderTitle = styled('div')({
   fontWeight: '800',
   fontSize: 25,
@@ -47,22 +61,24 @@ const HeaderTitle = styled('div')({
     fontSize: 17
   }
 })
+// ${(props) => props.theme.background}
 
+function Header({toggleTheme}) {
+  const theme = useContext(ThemeContext);
 
-function header() {
   return (
-    <div className='header'>
+    <HeaderDiv theme={theme}>
       <StyledBox>
         <Stack direction="row" spacing={0} justifyContent="space-between">
           <HeaderTitle>Where in the world?</HeaderTitle>
 
-          <DarkModeBtn variant="outlined" startIcon={<DarkModeOutlinedIcon />}>
+          <DarkModeBtn btntheme={theme} variant="outlined" startIcon={<DarkModeOutlinedIcon />} onClick={toggleTheme}>
             Dark Mode
           </DarkModeBtn>
         </Stack>
       </StyledBox>
-    </div>
+    </HeaderDiv>
   );
 }
 
-export default header;
+export default Header;

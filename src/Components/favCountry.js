@@ -28,18 +28,18 @@ const FavRemove = styled(Button)({
     }
 })
 
-function favCountry() {
+function favCountry({ favCountry, handleRemoveFav }) {
     return (
         <div>
             <Stack direction="row" justifyContent="space-between">
                 <Stack direction="row" spacing={1}>
-                    <FavFlag src={US}></FavFlag>
-                    <FavTitle>Jordan</FavTitle>
+                    <FavFlag src={favCountry.flags.svg}></FavFlag>
+                    <FavTitle>{favCountry.name.common}</FavTitle>
                 </Stack>
                 {/* <IconButton aria-label="delete" size="small">
                     <CloseIcon fontSize="inherit" />
                 </IconButton> */}
-                <FavRemove><CloseIcon
+                <FavRemove onClick={() => handleRemoveFav(favCountry.cca2)}><CloseIcon
                     sx={{ fontSize: 11, backgroundColor: 'lightgray', borderRadius: 5, p: 0.3 }}
                 /></FavRemove>
             </Stack>
