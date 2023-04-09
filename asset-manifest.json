@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/Harri-Training-ReactJs/static/css/main.9dc41143.css",
-    "main.js": "/Harri-Training-ReactJs/static/js/main.3201a80d.js",
+    "main.js": "/Harri-Training-ReactJs/static/js/main.088fa2b8.js",
     "static/js/787.ebef4dba.chunk.js": "/Harri-Training-ReactJs/static/js/787.ebef4dba.chunk.js",
     "static/media/us.svg": "/Harri-Training-ReactJs/static/media/us.14abad61351d512234363fd6c0af113a.svg",
     "index.html": "/Harri-Training-ReactJs/index.html",
     "main.9dc41143.css.map": "/Harri-Training-ReactJs/static/css/main.9dc41143.css.map",
-    "main.3201a80d.js.map": "/Harri-Training-ReactJs/static/js/main.3201a80d.js.map",
+    "main.088fa2b8.js.map": "/Harri-Training-ReactJs/static/js/main.088fa2b8.js.map",
     "787.ebef4dba.chunk.js.map": "/Harri-Training-ReactJs/static/js/787.ebef4dba.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9dc41143.css",
-    "static/js/main.3201a80d.js"
+    "static/js/main.088fa2b8.js"
   ]
 }
