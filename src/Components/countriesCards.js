@@ -12,11 +12,12 @@ const CountriesCardsContainer = styled('div')({
 
     '@media (max-width: 1000px)': {
         width: '100%',
+        overflowY: 'none',
     }
 })
 
 
-export default function CountriesCards({countries}) {
+export default function CountriesCards({countries , favoriteCountries , addFavCountry , removeFavCountry}) {
 
     return (
 
@@ -26,7 +27,7 @@ export default function CountriesCards({countries}) {
                 <Grid container spacing={9}>
                     {countries.map((country, index) => (
                         <Grid item lg={4} md={6} sm={6} xs={12} xl={3}>
-                            <CountryCard Country={country} key={country.cca2}/>
+                            <CountryCard key={index} Country={country} favoriteCountries={favoriteCountries} addFavCountry={addFavCountry} removeFavCountry={removeFavCountry}/>
                         </Grid>
                     ))}
                 </Grid>
@@ -35,4 +36,6 @@ export default function CountriesCards({countries}) {
 
     );
 }
+
+// key={country.cca2}
 

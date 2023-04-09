@@ -6,14 +6,16 @@ import {
     createBrowserRouter,
     RouterProvider,
 } from "react-router-dom";
-import { useState, createContext, useContext } from "react";
+import { useState, createContext, useContext, useEffect } from "react";
 import { ThemeProvider } from "./Themes/ThemeProvider";
 import { lightTheme, darkTheme } from "./Themes/ThemesStyles";
 
 
 
 function App() {
-    const [theme, setTheme] = useState(lightTheme);
+    const [theme, setTheme] = useState(
+        JSON.parse(localStorage.getItem('theme')) || lightTheme
+    );
 
     const toggleTheme = () => {
         setTheme(theme === lightTheme ? darkTheme : lightTheme);
@@ -22,19 +24,21 @@ function App() {
     const router = createBrowserRouter([
         {
             path: "/",
-            element: <Home toggleTheme={toggleTheme}/>,
+            element: <Home toggleTheme={toggleTheme} />,
         },
         {
             path: "Info/:country",
-            element: <Info />,
+            element: <Info toggleTheme={toggleTheme}/>,
             loader: Countryloader,
         }
     ],
         {
             basename: "/Harri-Training-ReactJs",
         });
-    
-    
+
+    useEffect(() => {
+        localStorage.setItem('theme', JSON.stringify(theme));
+    }, [theme]);
 
 
     return (

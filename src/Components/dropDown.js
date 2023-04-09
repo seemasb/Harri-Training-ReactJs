@@ -5,6 +5,8 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import styled from 'styled-components';
+import { useContext } from "react";
+import { ThemeContext } from "../Themes/ThemeContext";
 
 const StyledInputLabel = styled(InputLabel)({
   '@media (max-width: 400px)': {
@@ -12,23 +14,32 @@ const StyledInputLabel = styled(InputLabel)({
   }
 })
 
-export default function BasicSelect({onFilterChange , filter}) {
-  // const [Filter, setFilter] = React.useState('');
+const StyledBox = styled(Box)`
+  background-color: ${(props) => props.theme.Lightbackground};
+  // color: ${(props) => props.theme.color};
+`
 
-  // const handleChange = (event) => {
-  //   setFilter(event.target.value);
-  // };
+// const StyledMenuItem = styled(MenuItem)`
+// background-color: ${(props) => props.theme.Lightbackground};
+// color: ${(props) => props.theme.color};
+// `
+export default function BasicSelect({onFilterChange , filter}) {
+
+
+  const theme = useContext(ThemeContext);
 
   return (
-    <Box sx={{ minWidth: 120, width: '200px', backgroundColor: 'white', fontWeight: '800' }} >
-      <FormControl fullWidth>
-        <StyledInputLabel>Filter By Region</StyledInputLabel>
+    <StyledBox sx={{ minWidth: 120, width: '200px', fontWeight: '800' }} theme={theme}>
+      <FormControl fullWidth >
+        <StyledInputLabel sx={{color: theme.color}}>Filter By Region</StyledInputLabel>
         <Select
           value={filter}
           label="Filter By Region"
           onChange={onFilterChange}
+          sx={{color: theme.color}}
         >
           <MenuItem value={''}>No Filter</MenuItem>
+          <MenuItem value={'Favorites'}>Favorites</MenuItem>
           <MenuItem value={'Africa'}>Africa</MenuItem>
           <MenuItem value={'Americas'}>Americas</MenuItem>
           <MenuItem value={'Asia'}>Asia</MenuItem>
@@ -36,6 +47,6 @@ export default function BasicSelect({onFilterChange , filter}) {
           <MenuItem value={'Oceania'}>Oceania</MenuItem>
         </Select>
       </FormControl>
-    </Box>
+    </StyledBox>
   );
 }

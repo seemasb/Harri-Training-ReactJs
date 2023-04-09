@@ -1,17 +1,20 @@
 import styled from 'styled-components';
 import { Box } from '@mui/material/';
 import Grid from '@mui/material/Grid';
-import InfoContentSection2 from './InfoContectSection2'
+import CountryDetails from './CountryDetails'
 import CircularProgress from '@mui/material/CircularProgress';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+
 
 const StyledFlag = styled('img')({
     objectFit: 'cover',
     width: '93%',
     margin: 'auto',
+    // height: '400px',
     '@media (max-width: 899px)': {
         width: '100%',
+        // height: '200px',
     },
 })
 
@@ -38,7 +41,6 @@ function InfoContent({ CountryName }) {
         const fetchData = async () => {
             try {
                 const fetcehdInfo = await axios.get('https://restcountries.com/v3.1/name/' + CountryName)
-                console.log(fetcehdInfo.data[0]);
                 setCountryInfo(fetcehdInfo.data[0]);
             } catch (error) {
                 console.error(error.message);
@@ -56,7 +58,7 @@ function InfoContent({ CountryName }) {
                     <StyledFlag src={countryInfo.flags.svg}></StyledFlag>
                 </Grid>
                 <Grid item sm={12} md={6}>
-                    <InfoContentSection2 countryInfo={countryInfo} />
+                    <CountryDetails countryInfo={countryInfo} />
                 </Grid>
             </Grid>
             : <CircularProgress /> }

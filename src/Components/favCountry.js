@@ -28,7 +28,7 @@ const FavRemove = styled(Button)({
     }
 })
 
-function favCountry({ favCountry, handleRemoveFav }) {
+function favCountry({ favCountry, removeFavCountry }) {
     return (
         <div>
             <Stack direction="row" justifyContent="space-between">
@@ -39,7 +39,7 @@ function favCountry({ favCountry, handleRemoveFav }) {
                 {/* <IconButton aria-label="delete" size="small">
                     <CloseIcon fontSize="inherit" />
                 </IconButton> */}
-                <FavRemove onClick={() => handleRemoveFav(favCountry.cca2)}><CloseIcon
+                <FavRemove onClick={() => removeFavCountry(favCountry.cca2)}><CloseIcon
                     sx={{ fontSize: 11, backgroundColor: 'lightgray', borderRadius: 5, p: 0.3 }}
                 /></FavRemove>
             </Stack>

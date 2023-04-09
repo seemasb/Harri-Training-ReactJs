@@ -15,6 +15,7 @@ const FlexDiv = styled('div')({
 const BorderFlex = styled('div')({
     display: 'flex',
     flexDirection: 'row',
+    alignContent: 'center',
     columnGap: '0.7rem',
     flexWrap: 'wrap',
     rowGap: '0.7rem',
@@ -81,32 +82,42 @@ const Bold = styled('span')({
 
 const BoldBorderTitle = styled('span')({
     fontWeight: '800',
-    marginTop: 5,
+    marginTop: 2,
     '@media (max-width: 400px)': {
         fontSize: '15px',
         marginTop: 23,
     },
 })
 
-export default function InfoContentSection2({ countryInfo }) {
+export default function CountryDetails({ countryInfo }) {
 
     const { name, population, region, subregion, capital,
         cca2, currencies, languages } = countryInfo
+
+    let ArrayLanguages = [];
+    let ArrayCurrency = [];
+
+    for (let x in currencies) {
+        ArrayCurrency.push(currencies[x].name)
+    }
+    for (let x in languages) {
+        ArrayLanguages.push(languages[x])
+    }
     return (
         <DivInfoContentSection2>
             <CountryTitle>{name.common}</CountryTitle>
             <Flex1>
                 <FlexDiv>
                     <span><Bold>Native Name: </Bold>{name.common}</span>
-                    <span><Bold>Population: </Bold>{population}</span>
+                    <span><Bold>Population: </Bold>{population.toLocaleString('en-US')}</span>
                     <span><Bold>Region: </Bold>{region}</span>
                     <span><Bold>Sub Region: </Bold>{subregion}</span>
                     <span><Bold>Capital: </Bold>{capital}</span>
                 </FlexDiv>
                 <FlexDiv>
                     <span><Bold>Top Level Domain: </Bold>{cca2}</span>
-                    <span><Bold>Currencies: </Bold>Euro</span>
-                    <span><Bold>Languages: </Bold>Dutch,French,German</span>
+                    <span><Bold>Currencies: </Bold>{ArrayCurrency.join(", ")}</span>
+                    <span><Bold>Languages: </Bold>{ArrayLanguages.join(", ")}</span>
                 </FlexDiv>
             </Flex1>
 

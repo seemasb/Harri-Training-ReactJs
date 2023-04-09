@@ -1,7 +1,8 @@
 import { TextField } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import { styled } from '@mui/material/styles';
-
+import { useContext } from "react";
+import { ThemeContext } from "../Themes/ThemeContext";
 
 
 const SearchField = styled(TextField)`
@@ -9,8 +10,9 @@ const SearchField = styled(TextField)`
     border: none;
     outline: none;
     border-color: transparent;
-    background-color: white;
-    width: 38%;
+    background-color:${(props) => props.theme.Lightbackground};
+    color: ${(props) => props.theme.color};
+    width: 38% !important;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     min-width: 300px;
 
@@ -19,7 +21,7 @@ const SearchField = styled(TextField)`
     }
 
     @media screen and (max-width: 600px) {
-      width: 100%;
+      width: 100% !important;
     }
   }
 `;
@@ -35,6 +37,7 @@ const Flex = styled('div')({
 export default function SearchBar(props) {
 
   const { onSearch, searchTerm } = props
+  const theme = useContext(ThemeContext);
 
   return (
     <SearchField
@@ -42,14 +45,15 @@ export default function SearchBar(props) {
       type="search"
       label={
         <Flex>
-          <SearchIcon />
-          <div>
+          <SearchIcon style={{color: theme.color}}/>
+          <div style={{color: theme.color}}>
             Search for a country..
           </div>
         </Flex>
       }
       value={searchTerm}
       onChange={onSearch}
+      theme={theme}
     />
   );
 }

@@ -7,6 +7,10 @@ import { Link } from "react-router-dom";
 import { useDrag } from 'react-dnd';
 import { useContext } from "react";
 import { ThemeContext } from "../Themes/ThemeContext";
+import IconButton from '@mui/material/IconButton';
+import StarBorderIcon from '@mui/icons-material/StarBorder';
+import StarIcon from '@mui/icons-material/Star';
+
 
 
 const CountryTitle = styled('div')({
@@ -28,32 +32,53 @@ const StyledFlag = styled('img')({
   width: '100%'
 })
 
-const StyledCard = styled(Card)({
 
-  backgroundColor: (props) => props.cardTheme.Lightbackground,
-  color: (props) => props.cardTheme.color,
+const StyledCard = styled(Card)`
 
-  '@media (max-width: 1000px)': {
-    maxWidth: '300px',
-    // margin: 'auto'
-  },
+  background-color: ${(props) => props.cardtheme.Lightbackground};
+  color: ${(props) => props.cardtheme.color};
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
 
-  '@media (max-width: 600px)': {
-    // maxWidth: '70%',
-    margin: 'auto'
-  },
-
-  '@media (max-width: 400px)': {
-    maxWidth: '260px',
+  @media screen and (max-width: 1000px) {
+    max-width: 300px;
+  }
+  @media screen and (min-width: 1000px) {
+    // padding-bottom: 25px;
   }
 
-})
+  @media screen and (max-width: 600px) {
+    margin : auto;
+  }
+
+  @media screen and (max-width: 400px) {
+    max-width: 260px;
+  }
+
+`
+
+const StyledFavButton = styled(IconButton)`
+display: flex;
+justify-content: flex-end;
+margin: 0;
+@media screen and (min-width: 1000px) {
+  display: none;
+}
+`
+
+const StyledCardContent = styled(CardContent)`
+
+@media screen and (max-width: 1000px) {
+  padding: 16px 0 0 27px!important;
+}
+`
 
 
-export default function CountryCard({ Country }) {
+export default function CountryCard({ Country, favoriteCountries, addFavCountry, removeFavCountry }) {
 
   const { flags, name, population, region, capital } = Country;
   const theme = useContext(ThemeContext);
+
+  const isFav = favoriteCountries.find(matchedCountry => matchedCountry.cca2 == Country.cca2);
 
   const [{ isDragging }, drag] = useDrag(() => ({
     type: 'CARD',
@@ -67,15 +92,16 @@ export default function CountryCard({ Country }) {
     <Link to={`Info/${name.common}`} style={{ textDecoration: 'none', opacity: isDragging ? 0.5 : 1 }}
       ref={drag}
     >
-      <StyledCard sx={{ pb: 2, boxShadow: '0px 5px 5px rgba(0, 0, 0, 0.1)' }}
+      <StyledCard
         onClick={() => { console.log(Country) }}
+        cardtheme={theme}
       >
 
-        {/* cardTheme={theme} */}
         <StyledFlag
           src={flags.svg}
         />
-        <CardContent sx={{ pt: 2.5, pl: 3 }}>
+        <StyledCardContent>
+        {/* sx={{ pt: 2.5, pl: 3 }} */}
           <Stack direction="column" spacing={1.5} justifyContent="space-between">
 
             <CountryTitle>
@@ -83,12 +109,20 @@ export default function CountryCard({ Country }) {
             </CountryTitle>
 
             <Stack direction="column" spacing={0.3} justifyContent="space-between">
-              <div><SemiBold>Population: </SemiBold><CardDetails>{population}</CardDetails></div>
+              <div><SemiBold>Population: </SemiBold><CardDetails>{population.toLocaleString('en-US')}</CardDetails></div>
               <div><SemiBold>Region: </SemiBold><CardDetails>{region}</CardDetails></div>
               <div><SemiBold>Capital: </SemiBold><CardDetails>{capital}</CardDetails></div>
+
+              <StyledFavButton aria-label="addFav"  onClick={(e) => e.preventDefault}>
+                <Link to={`/`} style={{ color: 'orange' }}>
+                  {isFav ? <StarIcon onClick={() => removeFavCountry(Country.cca2)} /> : <StarBorderIcon onClick={() => addFavCountry(Country)} />}
+                </Link>
+              </StyledFavButton>
+
             </Stack>
           </Stack>
-        </CardContent>
+
+        </StyledCardContent>
       </StyledCard>
     </Link>
   );

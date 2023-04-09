@@ -4,18 +4,34 @@ import { Box, Stack } from '@mui/material/';
 import { useState } from 'react';
 // import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import { useDrop } from 'react-dnd';
+import { ThemeContext } from '../Themes/ThemeContext';
+import { useContext } from 'react';
 
-const FavList = styled('div')({
-    backgroundColor: 'white',
-    width: '24%',
-    height: '100vh',
-    borderRadius: '4px',
-    boxShadow: '0px 5px 10px rgba(0, 0, 0, 0.2)',
+// const FavList = styled('div')({
+//     backgroundColor: 'white',
+//     width: '24%',
+//     height: '100vh',
+//     borderRadius: '4px',
+//     boxShadow: '0px 5px 10px rgba(0, 0, 0, 0.2)',
 
-    '@media (max-width: 1000px)': {
-        display: 'none',
-    },
-});
+//     '@media (max-width: 1000px)': {
+//         display: 'none',
+//     },
+// });
+
+const FavList = styled('div')`
+    background-color:${(props) => props.theme.Lightbackground};
+    color: ${(props) => props.theme.color};
+    width: 24%;
+    height: 100vh;
+    border-radius: 4px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+
+    @media screen and (max-width: 1000px) {
+        display: none;
+      }
+   
+`
 
 
 const FavListTitle = styled('div')({
@@ -26,54 +42,8 @@ const FavListTitle = styled('div')({
     marginBottom: '26px'
 });
 
-// const ListRender = ({ list, onDragEnd }) => (
-//     <DragDropContext onDragEnd={onDragEnd}>
-//         <Droppable droppableId="droppable">
-//             {(provided) => (
-//                 <div ref={provided.innerRef} {...provided.droppableProps}>
-//                     {list.map((item, index) => (
-//                         <Draggable
-//                             key={item.id}
-//                             index={index}
-//                             draggableId={item.id}
-//                         >
-//                             {(provided, snapshot) => (
-//                                 <div
-//                                     ref={provided.innerRef}
-//                                     {...provided.draggableProps}
-//                                     {...provided.dragHandleProps}
-//                                 >
-//                                     <FavCountry country={item.c} />
-//                                 </div>
-//                             )}
-//                         </Draggable>
-//                     ))}
-//                 </div>
-//             )}
-//         </Droppable>
-//     </DragDropContext>
-// );
+function FavoriteList({ onCardDropped , favoriteCountries , removeFavCountry}) {
 
-const INITIAL_LIST = [
-    {
-        c: 'brazil',
-        id: '1'
-    },
-    {
-        c: 'jordan',
-        id: '2'
-    }
-]
-
-function FavoriteList({ onCardDropped , favoriteCountries , handleRemoveFav}) {
-    // const [list, setList] = useState(INITIAL_LIST);
-
-    // const handleDragEnd = ({ destination, source }) => {
-    //     console.log('dragged end')
-
-    // };
-
-    // console.log(favoriteCountries)
     const [{ isOver }, drop] = useDrop({
         accept: 'CARD',
         drop: (item) => {onCardDropped(item.Country)},
@@ -82,10 +52,10 @@ function FavoriteList({ onCardDropped , favoriteCountries , handleRemoveFav}) {
         }),
       });
 
-    //   onCardDropped(item.name)
+      const theme = useContext(ThemeContext);
 
     return (
-        <FavList ref={drop} style={{ backgroundColor: isOver ? 'lightgray' : 'white' }}>
+        <FavList ref={drop} style={{ backgroundColor: isOver ? 'gray' : theme.Lightbackground }} theme={theme}>
             <FavListTitle>Favourites</FavListTitle>
             <Box sx={{
                 pl: 3,
@@ -93,7 +63,7 @@ function FavoriteList({ onCardDropped , favoriteCountries , handleRemoveFav}) {
             }}>
                 <Stack direction={'column'} spacing={2}>
                     {favoriteCountries.map((favCountry)=>
-                        <FavCountry favCountry={favCountry} handleRemoveFav={handleRemoveFav}/>
+                        <FavCountry favCountry={favCountry} removeFavCountry={removeFavCountry}/>
                     )}
                     {/* <FavCountry />
                     <FavCountry /> */}
